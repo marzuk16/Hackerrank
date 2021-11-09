@@ -1,0 +1,55 @@
+Problem: Revising Aggregations - The Count Function
+    Solution: SELECT COUNT(POPULATION) FROM CITY WHERE POPULATION > 100000;
+
+Problem: Revising Aggregations - The Sum Function
+    Solution: SELECT SUM(POPULATION) FROM CITY WHERE DISTRICT='California';
+
+Problem: Revising Aggregations - Averages
+    Solution: SELECT AVG(POPULATION) FROM CITY WHERE DISTRICT='California';
+
+Problem: Average Population
+    Solution: SELECT ROUND(AVG(POPULATION),0) FROM CITY;
+
+Problem: Japan Population
+    Solution: SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE='JPN';
+
+Problem: Population Density Difference
+    Solution: SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
+    
+Problem: Top Earners
+    Solution: SELECT MAX(months * salary), COUNT(months * salary) FROM EMPLOYEE
+            WHERE (salary*months)=(SELECT MAX(salary * months) FROM EMPLOYEE);
+
+Problem: Weather Observation Station 2
+    Solution: SELECT CAST(ROUND(SUM(LAT_N), 2) as Numeric(36,2)),
+            CAST(ROUND(SUM(LONG_W), 2)as Numeric(36,2)) FROM STATION;
+
+Problem: Weather Observation Station 13
+    Solution: SELECT CAST(ROUND(SUM(LAT_N), 4) as Numeric(36,4))
+            FROM STATION WHERE LAT_N > 38.7880 AND LAT_N < 137.2345;
+
+Problem: Weather Observation Station 14
+    Solution: SELECT CAST(ROUND(MAX(LAT_N), 4) as NUMERIC(36, 4)) FROM STATION WHERE LAT_N < 137.2345;
+
+Problem: Weather Observation Station 15
+    Solution: SELECT CAST(ROUND(LONG_W, 4) as NUMERIC(36, 4)) FROM STATION 
+            WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);
+
+Problem: Weather Observation Station 16
+    Solution: SELECT CAST(ROUND(MIN(LAT_N), 4) as NUMERIC(36, 4)) FROM STATION WHERE  LAT_N > 38.7780;
+
+Problem: Weather Observation Station 17
+    Solution: SELECT CAST(ROUND(LONG_W, 4) as NUMERIC(36, 4)) FROM STATION 
+            WHERE LAT_N = (SELECT MIN(LAT_N) FROM STATION WHERE LAT_N > 38.7780);
+
+Problem: Weather Observation Station 18
+    Solution: SELECT CAST(ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)), 4) as NUMERIC(36, 4)) FROM STATION;
+    
+Problem: Weather Observation Station 19
+    Solution: SELECT CAST(ROUND(SQRT(SQUARE(MIN(LAT_N) - MAX(LAT_N)) + SQUARE(MIN(LONG_W) - MAX(LONG_W)) ), 4) AS NUMERIC (36, 4)) FROM STATION;
+
+Problem: Weather Observation Station 20
+    Solution:
+
+Problem: The Blunder
+    Solution:
