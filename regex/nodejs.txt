@@ -1,0 +1,75 @@
+Problem: Matching Anything But a Newline
+    Pattern: /^.{3}\..{3}\..{3}\..{3}$/g;
+
+Problem: Matching Digits & Non-Digit Character
+    Pattern: /\d\d\D\d\d\D\d\d\d\d/;
+    Another: /\d{2}\D\d{2}\D\d{4}/;
+
+Problem: Matching Whitespace & Non-Whitespace Character
+    Pattern: /\S{2}\s\S{2}\s\S{2}/;
+
+Problem: Matching Word & Non-Word Character
+    Pattern: /\w{3}\W\w{10}\W\w{3}/;
+
+Problem: Matching Start & End
+    Pattern: /^\d\w{4}.$/;
+
+Problem: Matching Specific String
+    Pattern: 'hackerrank';
+
+Problem: Backreferences To Failed Groups
+    Pattern: /^\d\d(-?)\d\d\1\d\d\1\d\d$/;
+
+Problem: Excluding Specific Characters
+    Pattern: /^\D[^aeiou][^bcDF]\S[^AEIOU][^.,]$/;
+
+Problem: Excluding Specific Characters
+    Pattern: /^\D[^aeiou][^bcDF]\S[^AEIOU][^.,]$/;
+
+Problem: Matching Character Ranges
+    Pattern: /^[a-z][1-9][^a-z][^A-Z][A-Z]/;
+
+Problem: Matching {x} Repetitions
+    Pattern: /^[a-zA-Z|02468]{40}[13579|\s]{5}$/;
+
+Problem: Matching {x, y} Repetitions
+    Pattern: /^[0-9]{1,2}[a-zA-Z]{3,}\.{0,3}$/;
+
+Problem: Matching Zero Or More Repetitions
+    Pattern: /^[0-9]{2,}[a-z]*[A-Z]*$/;
+
+Problem: Matching One Or More Repetitions
+    Pattern: /^[0-9]+[A-Z]+[a-z]+$/;
+
+Problem: Matching Ending Items
+    Pattern: /^[a-zA-Z]*s$/;
+
+Problem: Matching Specific Characters
+    Pattern: /^[123][120][xs0][30Aa][xsu][\.,]$/;
+
+Problem: HackerRank Tweets
+    Pattern: console.log(input.match(/hackerrank/gi).length);
+
+Problem: Matching Word Boundaries
+    Pattern: /\b[aeiouAEIOU][a-zA-Z]*\b/;
+
+Problem: Capturing & Non-Capturing Groups
+    Pattern: /(ok){3,}/;
+
+Problem: Alternative Matching
+    Pattern: /^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$/;
+
+Problem: Matching Same Text Again & Again
+    Pattern: /^([a-z])(\w)(\s)(\W)(\d)(\D)([A-Z])([a-zA-Z])([aeiouAEIOU])([^\s])\1\2\3\4\5\6\7\8\9\10$/;
+
+Problem: Alien Username
+    Pattern: 
+        input = input.split('\n');
+        //console.log(input);
+        let regexPattern = /^[_\.]\d+[a-zA-Z]*_?$/;
+        
+        for(let item = 1; item<input.length; item++){
+            let res = input[item].match(regexPattern);
+            if(res != null) console.log("VALID");
+            else console.log("INVALID");
+        }
