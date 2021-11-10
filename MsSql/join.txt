@@ -1,0 +1,22 @@
+Problem: Population Census
+    Solution: SELECT SUM(CITY.POPULATION) FROM CITY JOIN COUNTRY
+    ON COUNTRYCODE=COUNTRY.CODE WHERE CONTINENT='ASIA';
+
+Problem: African Cities
+    Solution: SELECT CITY.NAME FROM CITY JOIN COUNTRY
+    ON COUNTRYCODE=COUNTRY.CODE WHERE CONTINENT='AFRICA';
+
+Problem: Average Population of Each Continent
+    Solution: SELECT COUNTRY.CONTINENT, FLOOR(AVG(CITY.POPULATION)) FROM CITY JOIN COUNTRY
+    ON COUNTRYCODE=COUNTRY.CODE GROUP BY COUNTRY.CONTINENT;
+
+Problem: The Report
+    Solution: 
+Problem: 
+    Solution: 
+Problem: 
+    Solution: 
+Problem: 
+    Solution: 
+Problem: 
+    Solution: 
