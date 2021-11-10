@@ -23,9 +23,6 @@ Problem: Backreferences To Failed Groups
 Problem: Excluding Specific Characters
     Pattern: /^\D[^aeiou][^bcDF]\S[^AEIOU][^.,]$/;
 
-Problem: Excluding Specific Characters
-    Pattern: /^\D[^aeiou][^bcDF]\S[^AEIOU][^.,]$/;
-
 Problem: Matching Character Ranges
     Pattern: /^[a-z][1-9][^a-z][^A-Z][A-Z]/;
 
@@ -64,12 +61,15 @@ Problem: Matching Same Text Again & Again
 
 Problem: Alien Username
     Pattern: 
-        input = input.split('\n');
-        //console.log(input);
-        let regexPattern = /^[_\.]\d+[a-zA-Z]*_?$/;
-        
-        for(let item = 1; item<input.length; item++){
-            let res = input[item].match(regexPattern);
-            if(res != null) console.log("VALID");
-            else console.log("INVALID");
-        }
+        function processData(input) {
+            //Enter your code here
+            input = input.split('\n');
+            //console.log(input);
+            let regexPattern = /^[_\.]\d+[a-zA-Z]*_?$/;
+            
+            for(let item = 1; item<input.length; item++){
+                let res = input[item].match(regexPattern);
+                if(res != null) console.log("VALID");
+                else console.log("INVALID");
+            }
+        } 
