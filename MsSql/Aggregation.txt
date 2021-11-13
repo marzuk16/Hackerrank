@@ -84,3 +84,8 @@ Problem: Weather Observation Station 20
 
 Problem: The Blunder
     Solution:
+        DECLARE
+                @AVERAGE FLOAT = (SELECT AVG(CAST(SALARY AS FLOAT)) FROM EMPLOYEES),
+                @MISCALCULATE FLOAT = (SELECT AVG(CAST(REPLACE(SALARY, '0', '')AS FLOAT)) FROM EMPLOYEES);
+
+            PRINT CEILING(@AVERAGE - @MISCALCULATE);
