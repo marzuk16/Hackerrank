@@ -50,6 +50,42 @@ Problem: Weather Observation Station 19
 
 Problem: Weather Observation Station 20
     Solution:
+        DECLARE
+            @median float,
+            @fst float,
+            @snd float,
+            @totalRow int = (SELECT COUNT(LAT_N) FROM STATION);
+
+        IF (@totalRow % 2 = 0)
+            BEGIN
+                SET @fst = (SELECT LAT_N FROM STATION
+                --GROUP BY [NAME]
+                ORDER BY LAT_N
+                OFFSET ((@totalROW / 2) - 1) ROWS FETCH NEXT 1 ROWS ONLY);
+
+                SET @snd = (SELECT LAT_N FROM STATION
+                --GROUP BY [NAME]
+                ORDER BY LAT_N
+                OFFSET ((@totalROW / 2)) ROWS FETCH NEXT 1 ROWS ONLY);
+
+                SET @median = (@fst + @snd) / 2.0;
+
+                --PRINT @median;
+            END
+        ELSE
+            BEGIN
+            SET @median = (SELECT LAT_N FROM STATION
+                ORDER BY LAT_N
+                OFFSET CAST((@totalROW / 2.0) AS INT) ROWS FETCH NEXT 1 ROWS ONLY);
+                --PRINT @median;
+            END
+
+        PRINT CAST(ROUND(@median, 4) AS NUMERIC(36, 4));
 
 Problem: The Blunder
     Solution:
+        DECLARE
+                @AVERAGE FLOAT = (SELECT AVG(CAST(SALARY AS FLOAT)) FROM EMPLOYEES),
+                @MISCALCULATE FLOAT = (SELECT AVG(CAST(REPLACE(SALARY, '0', '')AS FLOAT)) FROM EMPLOYEES);
+
+            PRINT CEILING(@AVERAGE - @MISCALCULATE);
