@@ -1,0 +1,69 @@
+Problem: Revising the Select Query I
+    Solution: SELECT * FROM CITY WHERE COUNTRYCODE = 'USA' and POPULATION > 100000;
+ 
+Problem: Revising the Select Query II
+    Solution: SELECT NAME FROM CITY WHERE COUNTRYCODE = 'USA' AND POPULATION > 120000;
+
+Problem: Select All
+    Solution: SELECT * FROM CITY;
+
+Problem: Select By ID
+    Solution: SELECT * FROM CITY WHERE ID=1661;
+
+Problem: Japanese Cities' Attributes
+    Solution: SELECT * FROM CITY WHERE COUNTRYCODE='JPN';
+
+Problem: Japanese Cities' Names
+    Solution: SELECT NAME FROM CITY WHERE COUNTRYCODE='JPN';
+
+Problem: Weather Observation Station 1
+    Solution: SELECT CITY, STATE FROM STATION; 
+
+Problem:
+    Solution:
+
+Problem: Weather Observation Station 3
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE ID%2=0;
+
+Problem: Weather Observation Station 4
+    Solution: SELECT (COUNT(CITY) - COUNT(DISTINCT CITY)) FROM STATION;
+
+Problem: Weather Observation Station 5
+    Solution: 
+        select top 1 city, len(city)
+        from   station
+        order by len(city) desc, city asc;
+
+        select top 1 city c, len(city) l
+        from   station
+        order by len(city) asc, city asc;
+
+Problem: Weather Observation Station 6
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '[aeiou]%';
+
+Problem: Weather Observation Station 7
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '%[aeiou]';
+
+Problem: Weather Observation Station 8
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '[aeiou]%[aeiou]';
+
+Problem: Weather Observation Station 9
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY NOT LIKE '[aeiou]%';
+
+Problem: Weather Observation Station 10
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY NOT LIKE '%[aeiou]';
+
+Problem: Weather Observation Station 11
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY NOT LIKE '[aeiou]%[aeiou]';
+
+Problem: Weather Observation Station 12
+    Solution: SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '[^aeiou]%[^aeiou]';
+
+Problem: Higher Than 75 Marks
+    Solution: SELECT Name FROM STUDENTS WHERE Marks > 75 ORDER BY RIGHT(NAME, 3), ID ASC;
+
+Problem: Employee Names
+    Solution: SELECT name FROM EMPLOYEE ORDER BY name ASC;
+
+Problem: Employee Salaries
+    Solution: SELECT name FROM EMPLOYEE WHERE salary > 2000 AND months < 10 ORDER BY employee_id ASC;
