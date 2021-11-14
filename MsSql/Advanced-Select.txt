@@ -1,0 +1,26 @@
+Problem: Type of Triangle
+    Solution: 
+        SELECT
+            CASE
+                WHEN (A + B) <= C OR (B + C) <= A OR (A + C) <= B THEN 'Not A Triangle'
+                ELSE
+                    CASE
+                        WHEN A = B AND B = C THEN 'Equilateral'
+                        WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+                        WHEN A != B AND B != C THEN 'Scalene' 
+                    END
+            END
+        FROM TRIANGLES;
+
+Problem: The PADS
+    Solution: 
+        SELECT Name + '(' + SUBSTRING(OCCUPATION, 1, 1) + ')' FROM OCCUPATIONS ORDER BY Name ASC;
+        SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), ' ', LOWER(OCCUPATION), 's.') AS TOTAL
+        FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY TOTAl ASC;
+
+Problem: 
+    Solution: 
+Problem: 
+    Solution: 
+Problem: 
+    Solution: 
