@@ -10,12 +10,9 @@ public class Java_Anagrams {
         int A[] = new int[26], B[] = new int[26];
         Boolean anagram = true;
         
-        if(A.length == B.length){
+        if(fst.length() == snd.length()){
             for(int i=0; i<fst.length(); i++){
                 A[ (int)fst.charAt(i) - 97 ] ++;
-            }
-            
-            for(int i=0; i<snd.length(); i++){
                 B[ (int)snd.charAt(i) - 97 ] ++;
             }
             
