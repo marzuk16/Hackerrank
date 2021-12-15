@@ -31,12 +31,12 @@ class Dog{
     }
 
     @Override
-	public boolean equals(Object obj){
-		return this.hashCode() == obj.hashCode();
+    public boolean equals(Object obj){
+	return this.hashCode() == obj.hashCode();
     }
     @Override
-        public int hashCode(){
-            return HashHelper.generate(13, this.isBarking);
+    public int hashCode(){
+	return HashHelper.generate(13, this.isBarking);
     }
 
 }
