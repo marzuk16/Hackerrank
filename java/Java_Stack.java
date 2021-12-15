@@ -16,6 +16,7 @@ class Java_Stack{
                 if(input.charAt(i) == '}') snd --;
                 if(input.charAt(i) == '[') trd ++;
                 if(input.charAt(i) == ']') trd --;
+                if(fst < 0 || snd < 0 || trd < 0) break;
             }
             
             if(fst == 0 && snd == 0 && trd == 0){
