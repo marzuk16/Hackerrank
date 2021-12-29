@@ -9,7 +9,7 @@ import java.util.TreeMap;
 import java.util.Set;
 import java.util.LinkedHashSet;
 
-class test{
+/* class test{
     private int a;
     private String name;
 
@@ -38,14 +38,13 @@ class test1 extends test{
     public void r(){
         System.out.println("test1");
     }
-}
+} */
 public class Play{
     public static void main(String[] args) {
         System.out.println("Play executing..........");
-
-        test t = new test1(1, "name");
-        // t.r();
-        t.run();
+        for(String a:args){
+            System.out.println(a);
+        }
 
     }
 }
