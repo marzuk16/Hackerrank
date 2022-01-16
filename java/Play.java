@@ -1,50 +1,29 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.TreeMap;
-import java.util.Set;
-import java.util.LinkedHashSet;
+import java.util.stream.*;
+import java.util.stream.Collectors;
 
-/* class test{
-    private int a;
-    private String name;
-
-    test(){
-
-    }
-    test(int a, String name){
-        this.a = a;
-        this.name = name;
-    }
-
-    public void run(){
-        System.out.println("parent call");
-    }
-}
-
-class test1 extends test{
-    private int a1;
-    private String name1;
-
-    test1(int a, String name){
-        this.a1 = a;
-        this.name1 = name;
-    }
-
-    public void r(){
-        System.out.println("test1");
-    }
-} */
-public class Play{
+public class Play {
     public static void main(String[] args) {
-        System.out.println("Play executing..........");
-        for(String a:args){
-            System.out.println(a);
-        }
+        List<Integer> ls = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 
+        ls
+        .stream()
+        .filter(i -> i%2 == 0)
+        .map(i -> i*2)
+        .forEach(System.out::print);
+
+        System.out.println(ls.stream().reduce(6, (c , e)-> c+e));
+
+        String s = "Ethics Advance Technology Limited";
+        System.out.println();
+        Arrays.asList(s.split(""))
+        .stream()
+        .filter(i -> i.contains("e"))
+        .forEach(System.out::println);
+
+        Stream ss = ls.stream();
+        System.out.println(ss);
     }
 }

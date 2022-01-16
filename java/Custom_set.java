@@ -1,6 +1,3 @@
-/**
- * play
- */
 import java.util.*;
 
 class Dog{
