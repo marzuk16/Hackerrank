@@ -1,6 +1,3 @@
-/**
- * play
- */
 import java.util.*;
 
 class Dog{
@@ -31,12 +28,13 @@ class Dog{
     }
 
     @Override
-	public boolean equals(Object obj){
-		return this.hashCode() == obj.hashCode();
+    public boolean equals(Object obj){
+	    return this.hashCode() == obj.hashCode();
     }
     @Override
-        public int hashCode(){
-            return HashHelper.generate(13, this.isBarking);
+    public int hashCode(){
+	    // return HashHelper.generate(13, this.isBarking);
+        return Objects.hash(this.isBarking, this.name);
     }
 
 }
@@ -51,7 +49,7 @@ class HashHelper{
     }
 }
 
-public class Custom-set {
+public class Custom_set {
 
     public static void main(String[] args) {
         Dog aDog = new Dog("Max", false);
@@ -67,5 +65,4 @@ public class Custom-set {
 
         System.out.println(set.size());
     }
-    
 }
