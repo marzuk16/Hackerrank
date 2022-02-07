@@ -1,29 +1,29 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.*;
 import java.util.stream.Collectors;
 
 public class Play {
     public static void main(String[] args) {
-        List<Integer> ls = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-
-        ls
-        .stream()
-        .filter(i -> i%2 == 0)
-        .map(i -> i*2)
-        .forEach(System.out::print);
-
-        System.out.println(ls.stream().reduce(6, (c , e)-> c+e));
-
-        String s = "Ethics Advance Technology Limited";
+        System.out.println("Main method executing........");
+        recur(1, 10);
         System.out.println();
-        Arrays.asList(s.split(""))
-        .stream()
-        .filter(i -> i.contains("e"))
-        .forEach(System.out::println);
-
-        Stream ss = ls.stream();
-        System.out.println(ss);
+        System.out.println(rev("Md Marzukul Islam siddiki"));
     }
+
+    public static int recur(int start, int end){
+        if(start > end) return start;
+        System.out.print(start + " ");
+
+        recur(start + 1, end);
+        System.out.print(start + " ");
+        return 0;
+    }
+
+    public static String rev(String str){
+        return Arrays.asList(str.split(" "))
+        .stream()
+        .map(i -> new StringBuffer(i).reverse())
+        .filter(i -> i.length() > 5)
+        .map(i -> new StringBuffer(i).replace(1, 2, "R"))
+        .collect(Collectors.joining(","));
+    } 
 }
